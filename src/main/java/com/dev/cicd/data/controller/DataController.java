@@ -13,7 +13,7 @@ public class DataController {
 
         @GetMapping("/")
         public String healthCheck() {
-                return "Assignment-2 Completed Successfully - Rajkumar R";
+                return "Assignment-2 Completed Successfully - Rajkumar_R";
         }
 
         @GetMapping("/version")
