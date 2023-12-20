@@ -1,0 +1,24 @@
+name: Build and deploy JAVA app to Azure Web App - java-assignment2 - Rajkumar
+
+on:
+    pull_request:
+      types: [opened, synchronize, reopened, closed]
+      branches:
+        - 'feature/assignment1'
+    push:
+      branches:
+        - 'feature/assignment1'
+    workflow_dispatch:
+
+jobs:
+  build-deploy:
+    uses: rajkumar-r-org/build-template/.github/workflows/rajkumar-assignment2.yml@main
+    secrets:
+      azure-credentials: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ASSIGNMENT_1 }}
+    with:
+      java-version: '11'
+      app-name: 'rajkumar-assignmet1'
+      package-path: './target/*.jar'
+      artifact-name: 'java-app'
+      env-name: 'Production'
+      slot-name: 'Production'
