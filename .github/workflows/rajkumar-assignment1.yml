@@ -3,7 +3,7 @@ name: Build and deploy JAVA app to Azure Web App - java-assignment1 - Rajkumar
 on:
   push:
     branches:
-      - 'feature_branch'
+      - 'feature/assignment1'
   workflow_dispatch:
 
 jobs:
